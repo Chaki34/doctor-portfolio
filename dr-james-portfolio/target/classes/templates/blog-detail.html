@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Why Regular Checkups Matter More Than You Think')}"></head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-shell">
+
+    <header th:replace="~{fragments/header :: header('blog')}"></header>
+
+    <section class="section" style="padding-top:48px;">
+        <div class="container">
+
+            <!-- ===================== BREADCRUMB ===================== -->
+            <div class="breadcrumb" data-animate="fade-down">
+                <a href="/">Home</a> &nbsp;&gt;&nbsp; <a href="/blog">Blog</a>
+            </div>
+
+            <!-- ===================== ARTICLE HERO ===================== -->
+            <div class="article-hero" data-animate="fade-up">
+                <h1>Why Regular Checkups Matter More Than You Think</h1>
+                <img src="/images/placeholders/article-2.svg" alt="Why regular checkups matter more than you think">
+            </div>
+
+            <!-- ===================== ARTICLE BODY ===================== -->
+            <div class="article-body">
+                <div class="article-step" data-animate="fade-up">
+                    <h3>1. Early Detection Saves You Time and Money</h3>
+                    <p>Regular dental visits let Dr. James spot cavities, gum issues, or enamel wear long before they turn into bigger, costlier problems. Early intervention almost always means simpler, less invasive treatment.</p>
+                </div>
+
+                <div class="article-media" data-animate-stagger>
+                    <img src="/images/placeholders/service-checkup.svg" alt="Routine dental checkup">
+                    <img src="/images/placeholders/service-cavity.svg" alt="Cavity screening">
+                </div>
+
+                <div class="article-step" data-animate="fade-up">
+                    <h3>2. Professional Cleaning Keeps Your Smile Healthy</h3>
+                    <p>Even with daily brushing and flossing, plaque and tartar can build up in places a toothbrush can't reach. Professional cleanings remove those deposits, keeping both teeth and gums healthy.</p>
+                </div>
+
+                <div class="article-step" data-animate="fade-up">
+                    <h3>3. Prevent Gum Disease Before It Starts</h3>
+                    <p>Gum disease develops silently &mdash; without noticeable pain until it's advanced. Routine checkups help catch early signs of inflammation, protecting the long-term health of your gums and jaw structure.</p>
+                </div>
+
+                <div class="article-media" data-animate-stagger>
+                    <img src="/images/placeholders/service-whitening.svg" alt="Gum health assessment">
+                    <img src="/images/placeholders/doctor-clipboard.svg" alt="Consultation notes">
+                </div>
+
+                <div class="article-step" data-animate="fade-up">
+                    <h3>4. Keep Your Whole Body Healthier</h3>
+                    <p>Research shows oral health is linked to heart disease, diabetes, and other systemic conditions. Regular dental care helps maintain overall wellness by reducing harmful bacteria in your mouth.</p>
+                </div>
+
+                <div class="article-step" data-animate="fade-up">
+                    <h3>5. Personalized Guidance for Better Home Care</h3>
+                    <p>Every patient's mouth tells a different story. Dr. James provides personalized brushing, flossing, and diet advice &mdash; ensuring your daily habits protect your smile long after you leave the chair.</p>
+                </div>
+            </div>
+
+            <!-- ===================== CTA NEWSLETTER ===================== -->
+            <div style="margin-top:56px;" data-animate="fade-up">
+                <div class="panel cta-panel" style="padding-top:0;">
+                    <h2>Get in touch with<br>me for Appointment</h2>
+                    <div class="cta-photo">
+                        <img src="/images/placeholders/doctor-thumbsup.svg" alt="Dr. James">
+                    </div>
+                    <form class="cta-form" onsubmit="return false;">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Get Started</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</div>
+
+<script src="/js/three-bg.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Blog')}"></head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-shell">
+
+    <header th:replace="~{fragments/header :: header('blog')}"></header>
+
+    <!-- ===================== BLOG HERO ===================== -->
+    <section class="section" style="padding-top:56px; padding-bottom:24px;">
+        <div class="container">
+            <div class="panel about-hero" data-animate="fade-up">
+                <div>
+                    <h1>Insights &amp; Tips for a Healthier Smile</h1>
+                    <p>Stay informed with the latest dental care, oral health tips, and professional insights from Dr. James.</p>
+                </div>
+                <img src="/images/placeholders/about-portrait.svg" alt="Dr. James portrait">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== BLOG GRID ===================== -->
+    <section class="section" style="padding-top:24px;">
+        <div class="container">
+            <div class="blog-grid" data-animate-stagger>
+
+                <a href="/blog/stress-and-heart" class="blog-card">
+                    <img src="/images/placeholders/article-1.svg" alt="How stress affects your heart and body">
+                    <div class="blog-card-body">
+                        <h4>How Stress Affects Your Heart and Body</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/regular-checkups" class="blog-card">
+                    <img src="/images/placeholders/article-2.svg" alt="Why regular checkups matter more than you think">
+                    <div class="blog-card-body">
+                        <h4>Why Regular Checkups Matter More Than You Think</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/lifestyle-changes" class="blog-card">
+                    <img src="/images/placeholders/article-3.svg" alt="Simple lifestyle changes for better health">
+                    <div class="blog-card-body">
+                        <h4>Simple Lifestyle Changes for Better Health</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/whitening-myths" class="blog-card">
+                    <img src="/images/placeholders/article-1.svg" alt="Teeth whitening myths debunked">
+                    <div class="blog-card-body">
+                        <h4>Teeth Whitening Myths, Debunked</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/kids-dental-care" class="blog-card">
+                    <img src="/images/placeholders/article-2.svg" alt="A parent's guide to kids' dental care">
+                    <div class="blog-card-body">
+                        <h4>A Parent's Guide to Kids' Dental Care</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/gum-disease" class="blog-card">
+                    <img src="/images/placeholders/article-3.svg" alt="Early signs of gum disease you shouldn't ignore">
+                    <div class="blog-card-body">
+                        <h4>Early Signs of Gum Disease You Shouldn't Ignore</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+
+                <!-- hidden until "Show More" is pressed -->
+                <a href="/blog/root-canal-facts" class="blog-card is-hidden" style="display:none;">
+                    <img src="/images/placeholders/article-1.svg" alt="Root canal facts vs fiction">
+                    <div class="blog-card-body">
+                        <h4>Root Canal: Facts vs. Fiction</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/diet-and-teeth" class="blog-card is-hidden" style="display:none;">
+                    <img src="/images/placeholders/article-2.svg" alt="How your diet affects your teeth">
+                    <div class="blog-card-body">
+                        <h4>How Your Diet Affects Your Teeth</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/invisible-aligners" class="blog-card is-hidden" style="display:none;">
+                    <img src="/images/placeholders/article-3.svg" alt="Are invisible aligners right for you">
+                    <div class="blog-card-body">
+                        <h4>Are Invisible Aligners Right for You?</h4>
+                        <span class="link-cta">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="load-more-wrap" data-animate="fade-up">
+                <button id="loadMoreBtn" class="btn btn-ghost">Show More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA NEWSLETTER ===================== -->
+    <section class="section">
+        <div class="container">
+            <div class="panel cta-panel" data-animate="fade-up" style="padding-top:0;">
+                <h2>Get in touch with<br>me for Appointment</h2>
+                <div class="cta-photo">
+                    <img src="/images/placeholders/doctor-thumbsup.svg" alt="Dr. James">
+                </div>
+                <form class="cta-form" onsubmit="return false;">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Get Started</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</div>
+
+<script src="/js/three-bg.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

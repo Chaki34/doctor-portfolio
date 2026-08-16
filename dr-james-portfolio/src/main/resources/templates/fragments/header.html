@@ -1,0 +1,19 @@
+<!-- ===================== HEADER / NAVBAR FRAGMENT ===================== -->
+<header class="site-header" th:fragment="header(active)" data-animate="fade-down">
+    <div class="container header-inner">
+        <a href="/" class="brand">Dr. James</a>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="/" th:classappend="${active == 'home'} ? 'is-active'">Home</a>
+            <a href="/about" th:classappend="${active == 'about'} ? 'is-active'">About</a>
+            <a href="/blog" th:classappend="${active == 'blog'} ? 'is-active'">Blog</a>
+            <a href="/#services" th:classappend="${active == 'services'} ? 'is-active'">Services</a>
+        </nav>
+
+        <a href="/#contact" class="link-cta">Contact Me <i class="fa-solid fa-arrow-right"></i></a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>

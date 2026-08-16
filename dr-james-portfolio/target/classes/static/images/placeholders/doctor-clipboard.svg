@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 720" width="700" height="720">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2F6BFF"/>
+      <stop offset="100%" stop-color="#1B3F9E"/>
+    </linearGradient>
+    <pattern id="p" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="22" height="22" fill="transparent"/>
+      <line x1="0" y1="0" x2="0" y2="22" stroke="#ffffff" stroke-opacity="0.10" stroke-width="10"/>
+    </pattern>
+  </defs>
+  <rect width="700" height="720" rx="18" fill="url(#g)"/>
+  <rect width="700" height="720" rx="18" fill="url(#p)"/>
+  <g transform="translate(700/2, 720/2)" text-anchor="middle" font-family="Arial, sans-serif">
+    <circle r="26" fill="#ffffff" fill-opacity="0.18"/>
+    <path d="M-13,-6 a13,13 0 1,1 26,0 a13,13 0 1,1 -26,0" fill="none" stroke="#fff" stroke-width="2.4" opacity="0.85"/>
+    <circle cy="1" r="6" fill="#fff" opacity="0.85"/>
+    <path d="M-16,15 q16,-14 32,0" fill="none" stroke="#fff" stroke-width="2.4" opacity="0.85"/>
+    <text y="52" font-size="13" fill="#ffffff" opacity="0.9" font-weight="600">Doctor photo</text>
+  </g>
+</svg>

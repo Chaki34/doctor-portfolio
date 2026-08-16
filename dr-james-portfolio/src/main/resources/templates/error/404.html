@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Page Not Found')}"></head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-shell">
+
+    <header th:replace="~{fragments/header :: header('')}"></header>
+
+    <!-- ===================== 404 SECTION ===================== -->
+    <section class="error-page">
+        <div class="container">
+            <div class="panel error-panel" data-animate="zoom-in">
+                <div class="error-code"><span>4</span><span class="zero">0</span><span>4</span></div>
+                <div class="error-card">
+                    <h2>Oops! Page not found</h2>
+                    <p>This page is missing, but great content isn't! Head back to the homepage.</p>
+                    <a href="/" class="btn btn-primary">Back To Home <i class="fa-solid fa-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="/js/three-bg.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

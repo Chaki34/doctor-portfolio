@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Home')}"></head>
+<body>
+
+<!-- Ambient Three.js background canvas (see /js/three-bg.js) -->
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-shell">
+
+    <!-- ===================== HEADER ===================== -->
+    <header th:replace="~{fragments/header :: header('home')}"></header>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-panel">
+                <span class="hero-watermark">James</span>
+
+                <div class="hero-top" data-animate="fade-down">
+                    <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                </div>
+
+                <div class="hero-body">
+                    <div class="hero-portrait" data-animate="fade-left">
+                        <img src="/images/placeholders/doctor-portrait-large.svg" alt="Dr. James portrait">
+                    </div>
+
+                    <div class="hero-copy" data-animate="fade-right">
+                        <span class="hey">Hey This is</span>
+                        <h1>Dr. James</h1>
+                        <p>DDS &mdash; Cosmetic &amp; Family Dentistry Expert</p>
+                        <a href="#contact" class="btn btn-primary">Book An Appointment <i class="fa-solid fa-arrow-up-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Decorative glowing tooth illustration -->
+                <svg class="hero-tooth" data-animate="zoom-in" viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="toothGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="55%" stop-color="#cfe0ff"/>
+                            <stop offset="100%" stop-color="#8fb0ff"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M110 12c-46 0-78 32-78 74 0 32 15 50 15 82 0 26 13 100 36 100 20 0 18-50 27-50s7 50 27 50c24 0 33-78 33-100 0-32 20-50 20-82 0-42-34-74-80-74z"
+                          fill="url(#toothGrad)" opacity="0.92"/>
+                    <g fill="#ffffff" opacity="0.9">
+                        <path d="M40 60l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/>
+                        <path d="M165 40l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/>
+                        <path d="M150 150l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+                    </g>
+                </svg>
+
+                <div class="hero-stats" data-animate="fade-up">
+                    <div class="avatars">
+                        <img src="/images/placeholders/avatar-1.svg" alt="Patient">
+                        <img src="/images/placeholders/avatar-2.svg" alt="Patient">
+                        <img src="/images/placeholders/avatar-3.svg" alt="Patient">
+                    </div>
+                    <div>
+                        <strong>10k+</strong>
+                        <span>Satisfied Patients</span>
+                    </div>
+                </div>
+
+                <div class="hero-bottom-fade"></div>
+            </div>
+
+            <div style="margin-top:22px; display:flex; justify-content:space-between; align-items:flex-start;" data-animate="fade-up">
+                <div>
+                    <p class="text-muted" style="max-width:280px;">Recommended by leading clinics and patients alike.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== WHY ME SECTION ===================== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-head" data-animate="fade-up">
+                <h2>Why Me?</h2>
+                <a href="/about" class="btn btn-primary">More About Me <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="panel why-card" data-animate="fade-up">
+                <div class="why-intro">
+                    <h3>Meet Dr. James</h3>
+                    <p>Dedicated to providing exceptional dental care with precision, compassion, and trust &mdash; ensuring every smile shines with confidence.</p>
+                </div>
+                <div class="why-divider"></div>
+                <div class="stat-card people">
+                    <div class="avatars">
+                        <img src="/images/placeholders/avatar-1.svg" alt="Patient">
+                        <img src="/images/placeholders/avatar-2.svg" alt="Patient">
+                        <img src="/images/placeholders/avatar-3.svg" alt="Patient">
+                    </div>
+                    <div>
+                        <strong>10k+</strong>
+                        <span class="stat-label">Satisfied Patients</span>
+                        <p class="stat-caption">Building confidence through every smile.</p>
+                    </div>
+                </div>
+                <div class="stat-card percent">
+                    <div class="num">98%</div>
+                    <span class="stat-label">Patients Satisfaction</span>
+                    <p class="stat-caption">Excellence reflected in every smile.</p>
+                </div>
+            </div>
+
+            <div class="feature-grid" data-animate-stagger style="margin-top:28px;">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-regular fa-tooth"></i></div>
+                    <h4>Advanced Dental Technology</h4>
+                    <p>Using state-of-the-art digital equipment to ensure accurate diagnosis and painless treatment for every patient.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-regular fa-clock"></i></div>
+                    <h4>Emergency Dental Support</h4>
+                    <p>Fast, reliable care when you need it most &mdash; because dental pain shouldn't wait.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-regular fa-star"></i></div>
+                    <h4>Trusted by Happy Patients</h4>
+                    <p>Hundreds of satisfied patients who continue to smile brighter with our dedicated care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SERVICES SECTION ===================== -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-head" data-animate="fade-up">
+                <h2>My Services</h2>
+                <a href="#" class="btn btn-primary">See All Services <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="services-grid" data-animate-stagger>
+                <div class="service-card">
+                    <img src="/images/placeholders/service-checkup.svg" alt="General checkup">
+                    <span class="service-tag">General Checkup</span>
+                    <span class="service-arrow"><i class="fa-solid fa-arrow-up-right"></i></span>
+                </div>
+                <div class="service-card">
+                    <img src="/images/placeholders/service-cavity.svg" alt="Cavity treatment">
+                    <span class="service-tag">Cavity Treatment</span>
+                    <span class="service-arrow"><i class="fa-solid fa-arrow-up-right"></i></span>
+                </div>
+                <div class="service-card">
+                    <img src="/images/placeholders/service-whitening.svg" alt="Teeth whitening">
+                    <span class="service-tag">Teeth Whitening</span>
+                    <span class="service-arrow"><i class="fa-solid fa-arrow-up-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS SECTION ===================== -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-head" data-animate="fade-up">
+                <h2>Professional Care,<br>Patient-Backed Trust</h2>
+                <div class="testimonial-head-actions">
+                    <button class="slider-btn prev" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="slider-btn next" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="testimonial-track-wrap" data-animate="fade-up">
+                <div class="testimonial-track">
+                    <div class="t-card is-highlight">
+                        <p>&ldquo;Dr. James made my root canal absolutely painless. His calm attitude and clear explanations helped me feel comfortable throughout.&rdquo;</p>
+                        <div class="t-person">
+                            <img src="/images/placeholders/avatar-1.svg" alt="Mr John">
+                            <div><strong>Mr John</strong><span>Patient</span></div>
+                        </div>
+                    </div>
+                    <div class="t-card">
+                        <p>&ldquo;From teeth whitening to regular cleaning &mdash; every visit feels professional, gentle, and genuinely reassuring.&rdquo;</p>
+                        <div class="t-person">
+                            <img src="/images/placeholders/avatar-2.svg" alt="Daniel R.">
+                            <div><strong>Daniel R.</strong><span>Dental Patient</span></div>
+                        </div>
+                    </div>
+                    <div class="t-card">
+                        <p>&ldquo;I used to fear dental visits, but Dr. James completely changed how I feel about the chair.&rdquo;</p>
+                        <div class="t-person">
+                            <img src="/images/placeholders/avatar-3.svg" alt="Michael L.">
+                            <div><strong>Michael L.</strong><span>Dental Patient</span></div>
+                        </div>
+                    </div>
+                    <div class="t-card">
+                        <p>&ldquo;Booking was effortless and the follow-up care showed how much this practice genuinely cares.&rdquo;</p>
+                        <div class="t-person">
+                            <img src="/images/placeholders/avatar-1.svg" alt="Sara K.">
+                            <div><strong>Sara K.</strong><span>Dental Patient</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PRICING SECTION ===================== -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="panel pricing-panel" data-animate="fade-up">
+                <div>
+                    <h2>Expertly Crafted Care Plans, Just for You</h2>
+                    <p class="lede">Expert dental solutions tailored to your unique needs.</p>
+
+                    <div class="price-row">
+                        <span class="currency">$</span>
+                        <span class="amount">200</span>
+                        <span class="per">/ per month</span>
+                    </div>
+                    <div class="billed"><i class="fa-regular fa-credit-card"></i> Billed Annually</div>
+
+                    <ul class="plan-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Comprehensive dental check-up</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Professional teeth cleaning &amp; polishing</li>
+                        <li><i class="fa-solid fa-circle-check"></i> X-ray &amp; oral health assessment</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Personalized treatment recommendations</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Follow-up consultation</li>
+                    </ul>
+
+                    <a href="#contact" class="btn btn-primary" style="width:100%;">Choose Now</a>
+                </div>
+                <div class="pricing-photo">
+                    <img src="/images/placeholders/doctor-clipboard.svg" alt="Dr. James with clipboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CASE STUDY SECTION ===================== -->
+    <section class="section" id="case-study">
+        <div class="container">
+            <div class="section-head" data-animate="fade-up">
+                <h2>Case Study</h2>
+                <a href="#" class="btn btn-primary">See All <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="case-grid" data-animate-stagger>
+                <div class="case-card">
+                    <img src="/images/placeholders/patient-1.svg" alt="Patient Saraf M.">
+                    <div class="case-copy">
+                        <div>
+                            <div class="label">Patient Name</div>
+                            <div class="value">Saraf M.</div>
+                        </div>
+                        <div>
+                            <div class="label">Initial Concern</div>
+                            <div class="value">Tooth loss&hellip;</div>
+                        </div>
+                        <a href="#" class="link-cta">Full Case Study <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="/images/placeholders/patient-2.svg" alt="Patient David P.">
+                    <div class="case-copy">
+                        <div>
+                            <div class="label">Patient Name</div>
+                            <div class="value">David P.</div>
+                        </div>
+                        <div>
+                            <div class="label">Initial Concern</div>
+                            <div class="value">Tooth staining&hellip;</div>
+                        </div>
+                        <a href="#" class="link-cta">Full Case Study <i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ SECTION ===================== -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-head" data-animate="fade-up">
+                <h2>Any Question?</h2>
+                <a href="#" class="btn btn-primary">See All <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="faq-wrap">
+                <div class="faq-photo" data-animate="fade-left">
+                    <img src="/images/placeholders/doctor-clipboard.svg" alt="Dr. James">
+                </div>
+
+                <div class="faq-list" data-animate="fade-right">
+                    <div class="faq-item">
+                        <div class="faq-q"><span>How often should I visit the dentist?</span><span class="faq-toggle"><i class="fa-solid fa-plus"></i></span></div>
+                        <div class="faq-a">Most people should visit every six months for a routine check-up and cleaning, though your ideal schedule depends on your oral health history.</div>
+                    </div>
+                    <div class="faq-item is-open">
+                        <div class="faq-q"><span>Do dental treatments hurt?</span><span class="faq-toggle"><i class="fa-solid fa-plus"></i></span></div>
+                        <div class="faq-a">Most treatments are completely painless. Dr. James uses modern techniques and gentle care to keep you comfortable.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q"><span>Do you accept insurance or offer payment plans?</span><span class="faq-toggle"><i class="fa-solid fa-plus"></i></span></div>
+                        <div class="faq-a">Yes &mdash; we work with most major insurance providers and offer flexible monthly payment plans for larger treatments.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ARTICLES SECTION ===================== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head" data-animate="fade-up">
+                <h2>Read Articles</h2>
+                <a href="/blog" class="btn btn-primary">See All <i class="fa-solid fa-arrow-up-right"></i></a>
+            </div>
+
+            <div class="article-grid" data-animate-stagger>
+                <a href="/blog/stress-and-heart" class="article-card">
+                    <img src="/images/placeholders/article-1.svg" alt="How stress affects your heart and body">
+                    <div class="article-content">
+                        <h4>How Stress Affects Your Heart and Body</h4>
+                        <span class="article-read">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/regular-checkups" class="article-card">
+                    <img src="/images/placeholders/article-2.svg" alt="Why regular checkups matter more than you think">
+                    <div class="article-content">
+                        <h4>Why Regular Checkups Matter More Than You Think</h4>
+                        <span class="article-read">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+                <a href="/blog/lifestyle-changes" class="article-card">
+                    <img src="/images/placeholders/article-3.svg" alt="Simple lifestyle changes for better health">
+                    <div class="article-content">
+                        <h4>Simple Lifestyle Changes for Better Health</h4>
+                        <span class="article-read">Read More <i class="fa-solid fa-arrow-up-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-head" data-animate="fade-up" style="margin-bottom:24px;">
+                <h2>Contact Info</h2>
+            </div>
+
+            <div style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:24px;">
+                <div style="display:grid; gap:24px; align-content:start;">
+                    <div class="panel" style="padding:36px;" data-animate="fade-left">
+                        <h3 style="font-size:24px; font-weight:800; margin-bottom:8px;">Contact Info</h3>
+                        <p class="text-muted" style="margin-bottom:20px;">I'm here to help with any questions or feedback about me</p>
+                        <div class="social-row" style="margin-bottom:0;">
+                            <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div style="border-radius:var(--radius-xl); overflow:hidden;" data-animate="fade-left">
+                        <img src="/images/placeholders/doctor-patient-scene.svg" alt="Dr. James consulting a patient" style="width:100%; aspect-ratio:4/3.4; object-fit:cover;">
+                    </div>
+                </div>
+
+                <form class="panel" style="padding:36px; display:grid; gap:18px; align-content:start;" data-animate="fade-right" onsubmit="return false;">
+                    <label style="display:grid; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.04em; color:var(--text-muted);">
+                        NAME
+                        <input type="text" placeholder="Jonnie Dawson" style="padding:14px 16px; border-radius:12px; border:1px solid var(--border); font-family:inherit; font-size:15px;">
+                    </label>
+                    <label style="display:grid; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.04em; color:var(--text-muted);">
+                        EMAIL
+                        <input type="email" placeholder="hello@drjames.com" style="padding:14px 16px; border-radius:12px; border:1px solid var(--border); font-family:inherit; font-size:15px;">
+                    </label>
+                    <label style="display:grid; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.04em; color:var(--text-muted);">
+                        SERVICES
+                        <select style="padding:14px 16px; border-radius:12px; border:1px solid var(--border); font-family:inherit; font-size:15px; background:#fff;">
+                            <option>Select Your Service</option>
+                            <option>General Checkup</option>
+                            <option>Cavity Treatment</option>
+                            <option>Teeth Whitening</option>
+                        </select>
+                    </label>
+                    <label style="display:grid; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.04em; color:var(--text-muted);">
+                        MESSAGE
+                        <textarea rows="4" placeholder="I'd love to learn more about your services here*" style="padding:14px 16px; border-radius:12px; border:1px solid var(--border); font-family:inherit; font-size:15px; resize:vertical;"></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Book An Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CTA NEWSLETTER SECTION ===================== -->
+    <section class="section">
+        <div class="container">
+            <div class="panel cta-panel" data-animate="fade-up" style="padding-top:0;">
+                <h2>Get in touch with<br>me for Appointment</h2>
+                <div class="cta-photo">
+                    <img src="/images/placeholders/doctor-thumbsup.svg" alt="Dr. James">
+                </div>
+                <form class="cta-form" onsubmit="return false;">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Get Started</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</div>
+
+<script src="/js/three-bg.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

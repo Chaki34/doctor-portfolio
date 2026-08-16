@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('About')}"></head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-shell">
+
+    <header th:replace="~{fragments/header :: header('about')}"></header>
+
+    <!-- ===================== ABOUT HERO ===================== -->
+    <section class="section" style="padding-top:56px;">
+        <div class="container">
+            <div class="panel about-hero" data-animate="fade-up">
+                <div>
+                    <h1>About Me</h1>
+                    <p>Redefining smiles with precision, gentle care, and a touch of warmth.</p>
+                </div>
+                <img src="/images/placeholders/about-portrait.svg" alt="Dr. James portrait">
+            </div>
+
+            <!-- ===================== STATS + BIO ===================== -->
+            <div class="about-block" data-animate="fade-up">
+                <div class="two-col-list">
+                    <div class="info-card">
+                        <div class="stat-card people" style="background:transparent; box-shadow:none; padding:0;">
+                            <div class="avatars">
+                                <img src="/images/placeholders/avatar-1.svg" alt="Patient">
+                                <img src="/images/placeholders/avatar-2.svg" alt="Patient">
+                                <img src="/images/placeholders/avatar-3.svg" alt="Patient">
+                            </div>
+                            <div>
+                                <strong>10k+</strong>
+                                <span class="stat-label">Satisfied Patients</span>
+                            </div>
+                        </div>
+                        <p class="text-muted" style="margin-top:14px;">Building confidence through every smile.</p>
+                    </div>
+                    <div class="info-card">
+                        <p>With years of experience in modern dentistry, Dr. James is dedicated to providing personalized, gentle, and high-quality dental care to every patient who walks through the door.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> 98% Patients Satisfaction &mdash; Excellence reflected in every smile.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Philosophy: comfortable, informed, confident treatment.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== EDUCATION & AWARDS ===================== -->
+            <div class="about-block" data-animate-stagger>
+                <div class="two-col-list">
+                    <div class="info-card">
+                        <h3>Education &amp; Expertise</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-graduation-cap"></i> Doctor of Dental Surgery (DDS), Harvard School of Dental Medicine</li>
+                            <li><i class="fa-solid fa-graduation-cap"></i> Certified in Cosmetic &amp; Restorative Dentistry</li>
+                            <li><i class="fa-solid fa-graduation-cap"></i> Member, American Dental Association</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>Awards</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-trophy"></i> Excellence in Cosmetic Dentistry &mdash; 2022</li>
+                            <li><i class="fa-solid fa-trophy"></i> Best Patient Care Award &mdash; 2021</li>
+                            <li><i class="fa-solid fa-trophy"></i> Best Patient Care Award &mdash; 2023</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== PHILOSOPHY & OUTSIDE CLINIC ===================== -->
+            <div class="about-block" data-animate-stagger>
+                <div class="two-col-list">
+                    <div class="info-card">
+                        <h3>Philosophy of Care</h3>
+                        <p class="text-muted">Dr. James believes that every smile tells a story. He combines advanced techniques with compassionate care to ensure patients feel comfortable, informed, and confident throughout their treatment.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Outside the Clinic</h3>
+                        <p class="text-muted">When he's not transforming smiles, Dr. James enjoys photography, traveling, and spending time with his family. He believes a balanced life brings out the best in every smile.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== TESTIMONIALS (compact) ===================== -->
+            <div class="about-block" data-animate="fade-up">
+                <div class="section-head">
+                    <h2 style="font-size:28px;">Professional Care,<br>Patient-Backed Trust</h2>
+                </div>
+                <div class="testimonial-track-wrap">
+                    <div class="testimonial-track" style="transform:none;">
+                        <div class="t-card is-highlight">
+                            <p>&ldquo;Dr. James made my root canal absolutely painless. His calm attitude helped me feel comfortable throughout.&rdquo;</p>
+                            <div class="t-person">
+                                <img src="/images/placeholders/avatar-1.svg" alt="Mr John">
+                                <div><strong>Mr John</strong><span>Patient</span></div>
+                            </div>
+                        </div>
+                        <div class="t-card">
+                            <p>&ldquo;From teeth whitening to regular cleaning &mdash; every visit feels professional and reassuring.&rdquo;</p>
+                            <div class="t-person">
+                                <img src="/images/placeholders/avatar-2.svg" alt="Daniel R.">
+                                <div><strong>Daniel R.</strong><span>Dental Patient</span></div>
+                            </div>
+                        </div>
+                        <div class="t-card">
+                            <p>&ldquo;I used to fear dental visits, but Dr. James completely changed how I feel.&rdquo;</p>
+                            <div class="t-person">
+                                <img src="/images/placeholders/avatar-3.svg" alt="Michael L.">
+                                <div><strong>Michael L.</strong><span>Dental Patient</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== CTA NEWSLETTER ===================== -->
+            <div class="about-block" data-animate="fade-up">
+                <div class="panel cta-panel" style="padding-top:0;">
+                    <h2>Get in touch with<br>me for Appointment</h2>
+                    <div class="cta-photo">
+                        <img src="/images/placeholders/doctor-thumbsup.svg" alt="Dr. James">
+                    </div>
+                    <form class="cta-form" onsubmit="return false;">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Get Started</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+
+</div>
+
+<script src="/js/three-bg.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

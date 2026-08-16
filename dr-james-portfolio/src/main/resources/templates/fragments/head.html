@@ -1,0 +1,24 @@
+<!-- ===================== HEAD FRAGMENT ===================== -->
+<!-- Shared meta / fonts / stylesheet includes for every page -->
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} + ' · Dr. James — Dental Care'">Dr. James</title>
+    <meta name="description" content="Dr. James — Cosmetic &amp; Family Dentistry Expert. Book an appointment for gentle, modern dental care.">
+
+    <!-- Fonts: Plus Jakarta Sans (display + body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Three.js (ambient ripple-glass background canvas) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/responsive.css}">
+
+    <link rel="icon" th:href="@{/images/placeholders/favicon.svg}" type="image/svg+xml">
+</head>
